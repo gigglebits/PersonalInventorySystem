@@ -1,5 +1,6 @@
 """Application entry point."""
 from flask import Flask, render_template, request, url_for
+from forms import hash, registration, login
 
 
 app = Flask(__name__)
@@ -18,11 +19,12 @@ def home():
 @app.route('/login', methods=['GET', 'POST'])
 def log_in():
     #check for POST submition of form
-    if request.method == 'POST' and form.validate_on_submit():
-        username = request.form['username']
-        password = request.form['password']
-
-    return render_template("login.html")
+	if request.method == 'POST':
+		username = request.form['username']
+		password = request.form['password']
+		if login(username, password):
+			return render_template("HomePage.html")
+	return render_template("login.html")
 
 @app.route('/createAccount')
 def create_account():
@@ -43,4 +45,3 @@ def loading_page():
 @app.route('/find')
 def query_page():
     return "This is the query page."
-
