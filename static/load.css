@@ -5,7 +5,6 @@ h2{
     font-weight: bold;
     color: #004E89;
     padding-bottom: 40px;
-    z-index: 1;
 }
 
 form{
@@ -125,11 +124,41 @@ div#buttonRow{
     background: #DDDBF1;
 }
 
-#scannerUIButton{
-    float: right;
-    border-radius: 20px;
-    color: white;
-    background: #383F51;
-    z-index: 2;
+@media (max-width: 600px) {
+
+    h2 {
+        font-size: 50px;
+        margin-top: 28px;
+    }
+
+    .form-group {
+        width: none;
+    }
+
+    div#descriptionDiv {
+        width: 330px;
+
+    }
+
+    textarea {
+        width: 330px;
+
+    }
+
+    div#descriptionDiv {
+        width: 330px;
+        height: 325px;
+    }
+
+    .row {
+        margin-top: 10px;
+    }
+
+    div#labelAlign {
+        width: 292px;
+    }
+
+    div#desLabelAlign {
+        width: 292px;
+    }
 }
-http://127.0.0.1/design?space_id=40
