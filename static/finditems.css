@@ -52,3 +52,19 @@ h2{
 .results{
     text-align: center;
 }
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 40px;
+        font-weight: 500;
+        padding-bottom: 18px;
+
+    }
+
+    #search_box{
+        padding: 8px;
+        outline:none;
+        margin:12px auto;
+    }
+
+}
