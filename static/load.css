@@ -1,10 +1,10 @@
-
 h2{
     text-align: center;
     font-size: 80px;
     font-weight: bold;
     color: #004E89;
     padding-bottom: 40px;
+    z-index: 1;
 }
 
 form{
@@ -123,6 +123,15 @@ div#buttonRow{
     border: none;
     background: #DDDBF1;
 }
+
+#scannerUIButton{
+    float: right;
+    border-radius: 20px;
+    color: white;
+    background: #383F51;
+    z-index: 2;
+}
+http://127.0.0.1/design?space_id=40
 
 @media (max-width: 600px) {
 
