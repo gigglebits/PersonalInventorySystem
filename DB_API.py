@@ -19,15 +19,15 @@ pepper = "Mizzou2022!_IMT"
 def connectToDB():
     try:
         db = mariadb.connect(
-            user="trevor",
-            password="Graduation",
+            #user="trevor",
+            #password="Graduation",
             host="127.0.0.1",
             port=3306,
             database="Tabs_DB",
 
 
-            #user="root",
-            #password="root"
+            user="root",
+            password="root"
         )
     except mariadb.Error as e:
         print(f"Error connecting to MariaDB Platform: {e}")
@@ -513,16 +513,21 @@ def appFunctionSearch(userID, searchWord):
 
     for line in f:
         thisThing = line.split(',')
+        #print(thisThing)
         if thisThing[0] == 'space':
+            print(thisThing)
             if search in thisThing[1].lower() or search in thisThing[2].lower():
                 print(search + thisThing[1] + thisThing[2])
                 spaces[thisThing[1]] = thisThing[2]
             else:
                 pass
         else:
-            if search in thisThing[1].lower() or search in thisThing[2].lower() or search in thisThing[3].lower():
-                items[thisThing[1]] = thisThing[2]
-            else:
+            try:
+                if search in thisThing[1].lower() or search in thisThing[2].lower() or search in str(thisThing[3]).lower():
+                    items[thisThing[1]] = thisThing[2]
+                else:
+                    pass
+            except:
                 pass
 
     f.close()
