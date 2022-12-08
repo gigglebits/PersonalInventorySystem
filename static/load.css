@@ -132,43 +132,44 @@ div#buttonRow{
     background: #383F51;
     z-index: 2;
 }
-http://127.0.0.1/design?space_id=40
 
 @media (max-width: 600px) {
 
-     h2 {
-         font-size: 50px;
-         margin-top: 28px;
-     }
+    h2 {
+        font-size: 50px;
+        margin-top: 28px;
+    }
 
-     .form-group {
-         width: none;
-     }
+    form {
+        width: none;
+    }
 
-     div#descriptionDiv {
-         width: 330px;
+    div#rowDiv {
+        width: 346px;
 
-     }
+    }
 
-     textarea {
-         width: 330px;
+    textarea {
+        width: 330px;
 
-     }
+    }
 
-     div#descriptionDiv {
-         width: 330px;
-         height: 325px;
-     }
+    div#descriptionDiv {
+        width: 330px;
+        height: 325px;
+    }
 
-     .row {
-         margin-top: 10px;
-     }
+    div#labelAlign {
+        width: 292px;
+    }
 
-     div#labelAlign {
-         width: 292px;
-     }
+    div#desLabelAlign {
+        width: 292px;
+    }
 
-     div#desLabelAlign {
-         width: 292px;
-     }
- }
+    div#imageLabel {
+        width: 346px;
+        height: 346px;
+    }
+}
+http://127.0.0.1/design?space_id=40
