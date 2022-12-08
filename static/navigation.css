@@ -38,3 +38,11 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+@media (max-width: 600px) {
+     .dropdown-menu {
+         text-align: center;
+     }
+
+
+ }
