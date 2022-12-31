@@ -1,45 +1,99 @@
-{% extends "navigation.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/navigation.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/common.js"></script>
+    <title>Tabs - Login</title>
+    <link rel="stylesheet" href="../static/login.css">
+    <link rel="icon" type="image/png" href="../static/login/images/icons/NewTabs.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../static/login/css/main.css">
+</head>
 
-{% block title %}Tabs - Login{% endblock %}
-{% block customCSS %}
-<link rel="stylesheet" href="../static/login.css">
-{% endblock %}
 
-{% block customJS %}
-<!-- Any JS specific to this page goes here. -->
-{% endblock %}
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+                <img style="max-width: 100%" src="../static/login/images/icons/NewTabs.png" alt="logo">
 
-{% block content %}
+				<form class="login100-form validate-form" action="/login" method="post" id="mainForm">
 
-<div class="container" id="mainFormDiv">
-    <h2 name="headerTag">Log In</h2>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <div class="notification is-danger">
-            {{ messages[0] }}
-        </div>
-    {% endif %}
-    {% endwith %}
-    <form class="form-horizontal" action="/login" method="post" id="mainForm">
-        <div class="form-group">
-            <div class="col">
-              <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col">          
-                <input type="password" class="form-control" id="pwd" placeholder="Password" name="password" required>
-            </div>
-        </div>
-        <div class="form-group">        
-            <div class="col">
-                <button type="submit" class="btn btn-default" value="log">Login</button>
-            </div>
-        </div>
-    </form>
-        <div class="col">
-            <a href="/createAccount" class="btn btn-default" value="reg">Register</a>
-        </div>
-</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="username">
+						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
 
-{% endblock %}
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="password">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Don’t have an account?
+						</span>
+
+						<a class="txt2" href="/createAccount">
+							Sign Up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+
+        <script src="../static/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="../static/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../static/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/login/js/main.js"></script>
+</body>
+</html>
