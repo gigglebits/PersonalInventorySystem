@@ -40,7 +40,13 @@
                 <img style="max-width: 100%" src="../static/login/images/icons/NewTabs.png" alt="logo">
 
 				<form class="login100-form validate-form" action="/login" method="post" id="mainForm">
-
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="notification is-danger">
+                                {{ messages[0] }}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
 					<div class="wrap-input100 validate-input">
 						<input class="input100" type="text" name="username">
 						<span class="focus-input100" data-placeholder="Username"></span>

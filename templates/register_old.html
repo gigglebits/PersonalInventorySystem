@@ -1,0 +1,75 @@
+{% extends "navigation.html" %}
+
+{% block title %}Tabs-Registration{% endblock %}
+
+{% block customCSS %}
+  <link rel="stylesheet" href="../static/login.css">
+{% endblock %}
+
+{% block customJS %}
+<script>
+    function myValidation() {
+        if (document.getElementById("email").value != document.getElementById("email-repeat").value)
+        {
+            alert('Your emails don\'t match or you\'re missing a field.');
+            event.preventDefault();
+            return false;
+        }
+        else if (document.getElementById("pwd").value != document.getElementById("pwd-repeat").value){
+            alert('Your passwords don\'t match or you\'re missing a field.');
+            event.preventDefault();
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="container" id="mainFormDiv">
+    <h2 name="headerTag">Register</h2>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="notification is-danger">
+            {{ messages[0] }}. Go to <a href="{{ url_for('log_in') }}">login page</a>.
+        </div>
+    {% endif %}
+    {% endwith %}
+    <form class="form-horizontal" action="/createAccount" onsubmit = "myValidation();" method="post" id="mainForm">
+        <div class="form-group">
+            <div class="col">
+              <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col">
+                <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col">
+                <input type="email" class="form-control" id="email-repeat" placeholder="Email Confirmation" name="email-repeat" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col">          
+                <input type="password" class="form-control" id="pwd" placeholder="Password" name="password" required>
+            </div>
+        </div>
+        <div class="form-group">        
+            <div class="col">
+                <input type="password" class="form-control" id="pwd-repeat" placeholder="Password Confirmation" name="pwd-repeat" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col">
+                <button type="submit" class="btn btn-default" value="reg" id="rButton">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+<!-- after this then load the login page so they can login -->

@@ -86,4 +86,8 @@
     });
 
 
+
+
+oninput = (event) => { };
+
 })(jQuery);
